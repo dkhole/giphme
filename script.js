@@ -5,7 +5,7 @@ const weirdness = 10;
 async function getGif(apiKey, search, weird) {
     const img = document.querySelector('img');
 
-    const response = await fetch(`http://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${search}&weirdness=${weird}`, { mode: 'cors'})
+    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${search}&weirdness=${weird}`, { mode: 'cors'})
     const gif = await response.json()
     img.src = gif.data.images.original.url;
 }
